@@ -12,7 +12,7 @@ Vue.use(MuseUI)
 Vue.prototype.$axios = axios
 NProgress.start()
 NProgress.done()
-
+NProgress.config({speed: 500,color: 'primary',size: 2})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
