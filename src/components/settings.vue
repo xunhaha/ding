@@ -1,12 +1,12 @@
 <template>
   <div class="main">
-    message
+    settings
   </div>
 </template>
 
 <script>
 export default {
-  name: 'message',
+  name: 'settings',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
