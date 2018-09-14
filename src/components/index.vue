@@ -4,10 +4,10 @@
 			<span class="tittle">{{tittle}}</span>
     </mu-appbar>
     <router-view/>
-		<mu-bottom-nav shift class="bottomFixed" color="#FEFEFE">
-			<mu-bottom-nav-item title="消息" icon="message" class="bottom-icon" to="message"></mu-bottom-nav-item>
-			<mu-bottom-nav-item title="联系人" icon="account_circle" class="bottom-icon" to="accounts"></mu-bottom-nav-item>
-			<mu-bottom-nav-item title="设置" icon="settings" class="bottom-icon" to="settings"></mu-bottom-nav-item>
+		<mu-bottom-nav :value.sync="shift" shift class="bottomFixed" color="#FEFEFE" @change="changeTittle(shift)">
+			<mu-bottom-nav-item value="消息" title="消息" icon="message" class="bottom-icon" to="message"></mu-bottom-nav-item>
+			<mu-bottom-nav-item value="联系人" title="联系人" icon="account_circle" class="bottom-icon" to="accounts"></mu-bottom-nav-item>
+			<mu-bottom-nav-item value="设置" title="设置" icon="settings" class="bottom-icon" to="settings"></mu-bottom-nav-item>
 		</mu-bottom-nav>
   </div>
 </template>
@@ -17,8 +17,14 @@ export default {
   name: 'index',
   data(){
 		return{
+      shift:'消息',
 			tittle:'消息'
 		}
+  },
+  methods:{
+    changeTittle(tittle){
+      this.tittle=tittle;
+    }
   }
 }
 </script>
